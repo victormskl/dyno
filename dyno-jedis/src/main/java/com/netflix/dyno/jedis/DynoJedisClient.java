@@ -3794,7 +3794,7 @@ public class DynoJedisClient implements JedisCommands, BinaryJedisCommands, Mult
 
         List<OperationResult<ScanResult<String>>> opResults = scatterGatherScan(cursor, count, pattern);
         for (OperationResult<ScanResult<String>> opResult : opResults) {
-            results.put(opResult.getNode().getHostAddress(), opResult.getResult());
+            results.put(opResult.getNode().getHostName(), opResult.getResult());
         }
 
         return new CursorBasedResultImpl<>(results);

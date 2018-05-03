@@ -382,7 +382,7 @@ public class ConnectionPoolImpl<CL> implements ConnectionPool<CL>, TopologyView 
 
 				do {
 					try {
-						connection.getContext().setMetadata("host", connection.getHost().getHostAddress());
+						connection.getContext().setMetadata("host", connection.getHost().getHostName());
 						OperationResult<R> result = connection.execute(op);
 
 						// Add context to the result from the successful
